@@ -1,0 +1,167 @@
+//
+//  TopicViewController.m
+//  InfiniteScrollView
+//
+//  Created by Jimmy on 2019/2/15.
+//  Copyright © 2019 Jimmy. All rights reserved.
+//
+
+#import "TopicViewController.h"
+#import "InfiniteScrollView/InfiniteScrollViewController.h"
+#import "SimpleParallax/ParallaxViewController.h"
+
+@interface TopicViewController () <UITableViewDelegate, UITableViewDataSource>
+typedef NS_ENUM(NSUInteger, TOPICS) {
+    TOPIC_INFINITESCROLLVIEW = 0
+};
+
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UIView *container;
+@property (strong, nonatomic) UILabel *label;
+@property (strong, nonatomic) NSArray<NSString *> *topics;
+@property (weak, nonatomic) UIViewController *currentChildController;
+@property (strong, nonatomic) NSIndexPath *currentIndexPath;
+@end
+
+@implementation TopicViewController
+
+static NSString * cellId = @"cellId";
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = UIColor.whiteColor;
+    
+    _topics = @[@"Infinite ScrollView", @"Simple Parallax"];
+    
+    _tableView = [UITableView new];
+    _tableView.translatesAutoresizingMaskIntoConstraints = false;
+    
+    _container = [UIView new];
+    _container.translatesAutoresizingMaskIntoConstraints = false;
+    
+    _label = [UILabel new];
+    _label.translatesAutoresizingMaskIntoConstraints = false;
+    _label.text = @"Please choose a topic";
+    _label.textAlignment = NSTextAlignmentCenter;
+    _label.backgroundColor = [UIColor whiteColor];
+    
+    [self.view addSubview:_container];
+    [self.view addSubview:_tableView];
+    [self.view addSubview:_label];
+    
+    
+    if (@available(iOS 11.0, *)) {
+        [self.view addConstraints:@[
+                                    [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view.safeAreaLayoutGuide attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                    [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view.safeAreaLayoutGuide attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]
+                                    ]];
+    } else {
+        // Fallback on earlier versions
+        [self.view addConstraints:@[
+                                    [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1.0 constant:0],
+                                    [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0]
+                                    ]];
+    }
+    
+    [self.view addConstraints:@[
+                                
+                                [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeWidth multiplier:0.7 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20],
+                                [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]
+                                ]];
+    
+    [self.view addConstraints:@[
+                                [NSLayoutConstraint constraintWithItem:_label attribute: NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
+                                [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0]
+                                ]];
+    
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:true];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _topics.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    cell.textLabel.text = _topics[indexPath.row];
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_currentIndexPath == indexPath) {
+        [tableView deselectRowAtIndexPath:indexPath animated:true];
+        _currentIndexPath = nil;
+        [self attachController:nil];
+    } else {
+        _currentIndexPath = indexPath;
+        switch (indexPath.row) {
+            case 0:
+            {
+                InfiniteScrollViewController *vc = [InfiniteScrollViewController new];
+                [self attachController:vc];
+            }
+                break;
+            case 1:
+            {
+                ParallaxViewController *vc = [ParallaxViewController new];
+                [self attachController:vc];
+            }
+                break;
+            default:
+                [self attachController:nil];
+                break;
+        }
+    }
+}
+
+- (void)attachController:(nullable UIViewController *) newController {
+    if (_currentChildController != nil) {
+        [_currentChildController willMoveToParentViewController:nil];
+        [_currentChildController.view removeFromSuperview];
+        [_currentChildController didMoveToParentViewController:nil];
+        _currentChildController = nil;
+    }
+    
+    if (newController != nil) {
+        [newController willMoveToParentViewController:self];
+        [newController.view setFrame:_container.bounds];
+        [_container addSubview:newController.view];
+        [self addChildViewController:newController];
+        [newController didMoveToParentViewController:self];
+        _currentChildController = newController;
+        _label.hidden = true;
+    } else {
+        _label.hidden = false;
+    }
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end
