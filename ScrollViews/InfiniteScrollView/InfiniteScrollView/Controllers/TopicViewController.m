@@ -8,12 +8,8 @@
 
 #import "TopicViewController.h"
 #import "InfiniteScrollView/InfiniteScrollViewController.h"
-#import "SimpleParallax/ParallaxViewController.h"
 
 @interface TopicViewController () <UITableViewDelegate, UITableViewDataSource>
-typedef NS_ENUM(NSUInteger, TOPICS) {
-    TOPIC_INFINITESCROLLVIEW = 0
-};
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) UIView *container;
@@ -21,6 +17,7 @@ typedef NS_ENUM(NSUInteger, TOPICS) {
 @property (strong, nonatomic) NSArray<NSString *> *topics;
 @property (weak, nonatomic) UIViewController *currentChildController;
 @property (strong, nonatomic) NSIndexPath *currentIndexPath;
+@property (strong, nonatomic) NSLayoutConstraint *containerHeightConstraint;
 @end
 
 @implementation TopicViewController
@@ -35,7 +32,7 @@ static NSString * cellId = @"cellId";
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    _topics = @[@"Infinite ScrollView", @"Simple Parallax"];
+    _topics = @[@"Infinite ScrollView"];
     
     _tableView = [UITableView new];
     _tableView.translatesAutoresizingMaskIntoConstraints = false;
@@ -67,11 +64,13 @@ static NSString * cellId = @"cellId";
                                     ]];
     }
     
+    _containerHeightConstraint = [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeWidth multiplier:0.7 constant:0];
+    
     [self.view addConstraints:@[
                                 
                                 [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeCenterX multiplier:1.0 constant:0],
                                 [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0],
-                                [NSLayoutConstraint constraintWithItem:_container attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeWidth multiplier:0.7 constant:0],
+                                _containerHeightConstraint,
                                 [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_container attribute:NSLayoutAttributeBottom multiplier:1.0 constant:20],
                                 [NSLayoutConstraint constraintWithItem:_tableView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeWidth multiplier:1.0 constant:0]
                                 ]];
@@ -122,8 +121,7 @@ static NSString * cellId = @"cellId";
                 break;
             case 1:
             {
-                ParallaxViewController *vc = [ParallaxViewController new];
-                [self attachController:vc];
+                
             }
                 break;
             default:

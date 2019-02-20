@@ -13,6 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InfiniteScrollView : UIScrollView
 - (void)recenterIfNeeded;
+
+// Get Set
+- (CGFloat) getBaseLineMinY;
+- (void)setBaseLineMinY: (CGFloat) minY;
+- (CGFloat) getBaseLineMaxY;
+- (void)setBaseLineMaxY: (CGFloat) maxY;
 @end
 
 NS_ASSUME_NONNULL_END

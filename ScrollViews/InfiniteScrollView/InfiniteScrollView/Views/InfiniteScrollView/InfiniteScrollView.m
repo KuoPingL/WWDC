@@ -41,6 +41,22 @@
     baseLineMaxY = buildingContainerView.bounds.size.height - baseLineMinY * 2;
 }
 
+- (CGFloat)getBaseLineMinY {
+    return baseLineMinY;
+}
+
+- (void)setBaseLineMinY: (CGFloat) minY {
+    baseLineMinY = minY;
+}
+
+- (CGFloat)getBaseLineMaxY {
+    return baseLineMaxY;
+}
+
+- (void)setBaseLineMaxY: (CGFloat) maxY {
+    baseLineMaxY = maxY;
+}
+
 - (void)layoutSubviews {
     [super layoutSubviews];
     [self recenterIfNeeded];

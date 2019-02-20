@@ -19,8 +19,7 @@
 		BF2853B12218739500C5D401 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B02218739500C5D401 /* InfiniteScrollView.m */; };
 		BF2853B5221A8EBC00C5D401 /* UIColor+JColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B4221A8EBC00C5D401 /* UIColor+JColor.m */; };
 		BF2853B8221AA2F700C5D401 /* BuildingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B7221AA2F700C5D401 /* BuildingView.m */; };
-		BF2853BC221B0B3500C5D401 /* ParallaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853BB221B0B3500C5D401 /* ParallaxViewController.m */; };
-		BF2853C7221B161200C5D401 /* SimpleParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853C6221B161200C5D401 /* SimpleParallaxView.m */; };
+		BFE2E981221D09A100D0A164 /* SimpleParallaxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,10 +65,8 @@
 		BF2853B4221A8EBC00C5D401 /* UIColor+JColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JColor.m"; sourceTree = "<group>"; };
 		BF2853B6221AA2F700C5D401 /* BuildingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildingView.h; sourceTree = "<group>"; };
 		BF2853B7221AA2F700C5D401 /* BuildingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingView.m; sourceTree = "<group>"; };
-		BF2853BA221B0B3500C5D401 /* ParallaxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParallaxViewController.h; sourceTree = "<group>"; };
-		BF2853BB221B0B3500C5D401 /* ParallaxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParallaxViewController.m; sourceTree = "<group>"; };
-		BF2853C5221B161200C5D401 /* SimpleParallaxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleParallaxView.h; sourceTree = "<group>"; };
-		BF2853C6221B161200C5D401 /* SimpleParallaxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleParallaxView.m; sourceTree = "<group>"; };
+		BFE2E97F221D09A100D0A164 /* SimpleParallaxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleParallaxTableViewController.h; sourceTree = "<group>"; };
+		BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleParallaxTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,8 +226,8 @@
 		BF2853B9221B0B0000C5D401 /* SimpleParallax */ = {
 			isa = PBXGroup;
 			children = (
-				BF2853BA221B0B3500C5D401 /* ParallaxViewController.h */,
-				BF2853BB221B0B3500C5D401 /* ParallaxViewController.m */,
+				BFE2E97F221D09A100D0A164 /* SimpleParallaxTableViewController.h */,
+				BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */,
 			);
 			path = SimpleParallax;
 			sourceTree = "<group>";
@@ -238,8 +235,6 @@
 		BF2853BD221B0E1F00C5D401 /* SimpleParallax */ = {
 			isa = PBXGroup;
 			children = (
-				BF2853C5221B161200C5D401 /* SimpleParallaxView.h */,
-				BF2853C6221B161200C5D401 /* SimpleParallaxView.m */,
 			);
 			path = SimpleParallax;
 			sourceTree = "<group>";
@@ -375,10 +370,9 @@
 			files = (
 				BF28537D22170EA300C5D401 /* main.m in Sources */,
 				BF2853B12218739500C5D401 /* InfiniteScrollView.m in Sources */,
-				BF2853BC221B0B3500C5D401 /* ParallaxViewController.m in Sources */,
-				BF2853C7221B161200C5D401 /* SimpleParallaxView.m in Sources */,
 				BF2853B8221AA2F700C5D401 /* BuildingView.m in Sources */,
 				BF2853A62217BB7000C5D401 /* InfiniteScrollViewController.m in Sources */,
+				BFE2E981221D09A100D0A164 /* SimpleParallaxTableViewController.m in Sources */,
 				BF28536F22170E9900C5D401 /* AppDelegate.m in Sources */,
 				BF2853AC2217BC0600C5D401 /* BuildingBuilder.m in Sources */,
 				BF2853A32217104600C5D401 /* TopicViewController.m in Sources */,
