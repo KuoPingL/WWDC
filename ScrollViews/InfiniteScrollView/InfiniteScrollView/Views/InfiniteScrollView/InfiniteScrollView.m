@@ -19,26 +19,37 @@
 
 @implementation InfiniteScrollView
 
-- (instancetype)init
-{
-    self = [super init];
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
     if (self) {
-        visibleBuildings = [NSMutableArray new];
+        [self commonInit];
     }
     return self;
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-    [super setContentSize:contentSize];
-    if (buildingContainerView != nil) {
-        [buildingContainerView removeFromSuperview];
-        buildingContainerView = nil;
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self commonInit];
     }
-    buildingContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, contentSize.width, contentSize.height)];
+    return self;
+}
+
+- (void)commonInit {
+    visibleBuildings = [NSMutableArray new];
+    buildingContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width * 5, self.frame.size.height)];
     buildingContainerView.backgroundColor = UIColor.clearColor;
     [self addSubview:buildingContainerView];
     baseLineMinY = buildingContainerView.bounds.size.height * 0.1;
     baseLineMaxY = buildingContainerView.bounds.size.height - baseLineMinY * 2;
+}
+
+- (void)setContentSize:(CGSize)contentSize {
+    [super setContentSize:contentSize];
+    buildingContainerView.frame = CGRectMake(0, 0, contentSize.width * 5, contentSize.height);
+    baseLineMinY = contentSize.height * 0.1;
+    baseLineMaxY = contentSize.height - baseLineMinY * 2;
 }
 
 - (CGFloat)getBaseLineMinY {
@@ -55,6 +66,10 @@
 
 - (void)setBaseLineMaxY: (CGFloat) maxY {
     baseLineMaxY = maxY;
+}
+
+- (UIView *)getBuildingContainer {
+    return buildingContainerView;
 }
 
 - (void)layoutSubviews {

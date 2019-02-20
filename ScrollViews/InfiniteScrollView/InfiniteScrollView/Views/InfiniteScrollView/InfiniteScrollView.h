@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setBaseLineMinY: (CGFloat) minY;
 - (CGFloat) getBaseLineMaxY;
 - (void)setBaseLineMaxY: (CGFloat) maxY;
+- (UIView *)getBuildingContainer;
 @end
 
 NS_ASSUME_NONNULL_END

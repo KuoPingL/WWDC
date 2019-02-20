@@ -19,7 +19,14 @@
 		BF2853B12218739500C5D401 /* InfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B02218739500C5D401 /* InfiniteScrollView.m */; };
 		BF2853B5221A8EBC00C5D401 /* UIColor+JColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B4221A8EBC00C5D401 /* UIColor+JColor.m */; };
 		BF2853B8221AA2F700C5D401 /* BuildingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2853B7221AA2F700C5D401 /* BuildingView.m */; };
-		BFE2E981221D09A100D0A164 /* SimpleParallaxTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */; };
+		BFE2E986221D2B5400D0A164 /* StationaryHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E985221D2B5400D0A164 /* StationaryHeaderViewController.m */; };
+		BFE2E989221D2EA600D0A164 /* StationaryHeaderScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E988221D2EA600D0A164 /* StationaryHeaderScrollView.m */; };
+		BFE2E98F221D524100D0A164 /* SimpleParallaxView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E98E221D524100D0A164 /* SimpleParallaxView.m */; };
+		BFE2E992221DA98C00D0A164 /* SimpleParallaxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E991221DA98C00D0A164 /* SimpleParallaxViewController.m */; };
+		BFE2E996221DB00F00D0A164 /* CustomizedTouchHandlingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E995221DB00F00D0A164 /* CustomizedTouchHandlingViewController.m */; };
+		BFE2E99A221DB06300D0A164 /* CustomizedTouchHandlingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E999221DB06300D0A164 /* CustomizedTouchHandlingView.m */; };
+		BFE2E99E221DBAD600D0A164 /* RedrawZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E99D221DBAD600D0A164 /* RedrawZoomScrollView.m */; };
+		BFE2E9A2221DBBBB00D0A164 /* RedrawZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE2E9A1221DBBBB00D0A164 /* RedrawZoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +72,23 @@
 		BF2853B4221A8EBC00C5D401 /* UIColor+JColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JColor.m"; sourceTree = "<group>"; };
 		BF2853B6221AA2F700C5D401 /* BuildingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuildingView.h; sourceTree = "<group>"; };
 		BF2853B7221AA2F700C5D401 /* BuildingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuildingView.m; sourceTree = "<group>"; };
-		BFE2E97F221D09A100D0A164 /* SimpleParallaxTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleParallaxTableViewController.h; sourceTree = "<group>"; };
-		BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleParallaxTableViewController.m; sourceTree = "<group>"; };
+		BFE2E984221D2B5400D0A164 /* StationaryHeaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StationaryHeaderViewController.h; sourceTree = "<group>"; };
+		BFE2E985221D2B5400D0A164 /* StationaryHeaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StationaryHeaderViewController.m; sourceTree = "<group>"; };
+		BFE2E987221D2EA600D0A164 /* StationaryHeaderScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StationaryHeaderScrollView.h; sourceTree = "<group>"; };
+		BFE2E988221D2EA600D0A164 /* StationaryHeaderScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StationaryHeaderScrollView.m; sourceTree = "<group>"; };
+		BFE2E98C221D2F6600D0A164 /* ConstantHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantHeader.h; sourceTree = "<group>"; };
+		BFE2E98D221D524100D0A164 /* SimpleParallaxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleParallaxView.h; sourceTree = "<group>"; };
+		BFE2E98E221D524100D0A164 /* SimpleParallaxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleParallaxView.m; sourceTree = "<group>"; };
+		BFE2E990221DA98C00D0A164 /* SimpleParallaxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleParallaxViewController.h; sourceTree = "<group>"; };
+		BFE2E991221DA98C00D0A164 /* SimpleParallaxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleParallaxViewController.m; sourceTree = "<group>"; };
+		BFE2E994221DB00F00D0A164 /* CustomizedTouchHandlingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomizedTouchHandlingViewController.h; sourceTree = "<group>"; };
+		BFE2E995221DB00F00D0A164 /* CustomizedTouchHandlingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomizedTouchHandlingViewController.m; sourceTree = "<group>"; };
+		BFE2E998221DB06300D0A164 /* CustomizedTouchHandlingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomizedTouchHandlingView.h; sourceTree = "<group>"; };
+		BFE2E999221DB06300D0A164 /* CustomizedTouchHandlingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomizedTouchHandlingView.m; sourceTree = "<group>"; };
+		BFE2E99C221DBAD600D0A164 /* RedrawZoomScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedrawZoomScrollView.h; sourceTree = "<group>"; };
+		BFE2E99D221DBAD600D0A164 /* RedrawZoomScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedrawZoomScrollView.m; sourceTree = "<group>"; };
+		BFE2E9A0221DBBBB00D0A164 /* RedrawZoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RedrawZoomViewController.h; sourceTree = "<group>"; };
+		BFE2E9A1221DBBBB00D0A164 /* RedrawZoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedrawZoomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +150,7 @@
 				BF28537822170EA300C5D401 /* LaunchScreen.storyboard */,
 				BF28537B22170EA300C5D401 /* Info.plist */,
 				BF28537C22170EA300C5D401 /* main.m */,
+				BFE2E98C221D2F6600D0A164 /* ConstantHeader.h */,
 			);
 			path = InfiniteScrollView;
 			sourceTree = "<group>";
@@ -153,6 +176,9 @@
 		BF28539F22170F4500C5D401 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFE2E99F221DBB9600D0A164 /* RedrawScale */,
+				BFE2E993221DAFDA00D0A164 /* CustomizedTouchHandling */,
+				BFE2E982221D2A5A00D0A164 /* StationaryHeader */,
 				BF2853B9221B0B0000C5D401 /* SimpleParallax */,
 				BF2853A022170F4E00C5D401 /* InfiniteScrollView */,
 				BF2853A12217104600C5D401 /* TopicViewController.h */,
@@ -197,6 +223,9 @@
 		BF2853AD2218735000C5D401 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BFE2E99B221DBAA400D0A164 /* RedrawScale */,
+				BFE2E997221DB04900D0A164 /* CustomizedTouchHandling */,
+				BFE2E983221D2A6A00D0A164 /* StationaryHeader */,
 				BF2853BD221B0E1F00C5D401 /* SimpleParallax */,
 				BF2853AE2218736100C5D401 /* InfiniteScrollView */,
 			);
@@ -226,8 +255,8 @@
 		BF2853B9221B0B0000C5D401 /* SimpleParallax */ = {
 			isa = PBXGroup;
 			children = (
-				BFE2E97F221D09A100D0A164 /* SimpleParallaxTableViewController.h */,
-				BFE2E980221D09A100D0A164 /* SimpleParallaxTableViewController.m */,
+				BFE2E990221DA98C00D0A164 /* SimpleParallaxViewController.h */,
+				BFE2E991221DA98C00D0A164 /* SimpleParallaxViewController.m */,
 			);
 			path = SimpleParallax;
 			sourceTree = "<group>";
@@ -235,8 +264,64 @@
 		BF2853BD221B0E1F00C5D401 /* SimpleParallax */ = {
 			isa = PBXGroup;
 			children = (
+				BFE2E98D221D524100D0A164 /* SimpleParallaxView.h */,
+				BFE2E98E221D524100D0A164 /* SimpleParallaxView.m */,
 			);
 			path = SimpleParallax;
+			sourceTree = "<group>";
+		};
+		BFE2E982221D2A5A00D0A164 /* StationaryHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E984221D2B5400D0A164 /* StationaryHeaderViewController.h */,
+				BFE2E985221D2B5400D0A164 /* StationaryHeaderViewController.m */,
+			);
+			path = StationaryHeader;
+			sourceTree = "<group>";
+		};
+		BFE2E983221D2A6A00D0A164 /* StationaryHeader */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E987221D2EA600D0A164 /* StationaryHeaderScrollView.h */,
+				BFE2E988221D2EA600D0A164 /* StationaryHeaderScrollView.m */,
+			);
+			path = StationaryHeader;
+			sourceTree = "<group>";
+		};
+		BFE2E993221DAFDA00D0A164 /* CustomizedTouchHandling */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E994221DB00F00D0A164 /* CustomizedTouchHandlingViewController.h */,
+				BFE2E995221DB00F00D0A164 /* CustomizedTouchHandlingViewController.m */,
+			);
+			path = CustomizedTouchHandling;
+			sourceTree = "<group>";
+		};
+		BFE2E997221DB04900D0A164 /* CustomizedTouchHandling */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E998221DB06300D0A164 /* CustomizedTouchHandlingView.h */,
+				BFE2E999221DB06300D0A164 /* CustomizedTouchHandlingView.m */,
+			);
+			path = CustomizedTouchHandling;
+			sourceTree = "<group>";
+		};
+		BFE2E99B221DBAA400D0A164 /* RedrawScale */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E99C221DBAD600D0A164 /* RedrawZoomScrollView.h */,
+				BFE2E99D221DBAD600D0A164 /* RedrawZoomScrollView.m */,
+			);
+			path = RedrawScale;
+			sourceTree = "<group>";
+		};
+		BFE2E99F221DBB9600D0A164 /* RedrawScale */ = {
+			isa = PBXGroup;
+			children = (
+				BFE2E9A0221DBBBB00D0A164 /* RedrawZoomViewController.h */,
+				BFE2E9A1221DBBBB00D0A164 /* RedrawZoomViewController.m */,
+			);
+			path = RedrawScale;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,14 +453,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE2E989221D2EA600D0A164 /* StationaryHeaderScrollView.m in Sources */,
+				BFE2E996221DB00F00D0A164 /* CustomizedTouchHandlingViewController.m in Sources */,
 				BF28537D22170EA300C5D401 /* main.m in Sources */,
 				BF2853B12218739500C5D401 /* InfiniteScrollView.m in Sources */,
 				BF2853B8221AA2F700C5D401 /* BuildingView.m in Sources */,
 				BF2853A62217BB7000C5D401 /* InfiniteScrollViewController.m in Sources */,
-				BFE2E981221D09A100D0A164 /* SimpleParallaxTableViewController.m in Sources */,
+				BFE2E99A221DB06300D0A164 /* CustomizedTouchHandlingView.m in Sources */,
+				BFE2E98F221D524100D0A164 /* SimpleParallaxView.m in Sources */,
 				BF28536F22170E9900C5D401 /* AppDelegate.m in Sources */,
+				BFE2E992221DA98C00D0A164 /* SimpleParallaxViewController.m in Sources */,
 				BF2853AC2217BC0600C5D401 /* BuildingBuilder.m in Sources */,
+				BFE2E99E221DBAD600D0A164 /* RedrawZoomScrollView.m in Sources */,
 				BF2853A32217104600C5D401 /* TopicViewController.m in Sources */,
+				BFE2E986221D2B5400D0A164 /* StationaryHeaderViewController.m in Sources */,
+				BFE2E9A2221DBBBB00D0A164 /* RedrawZoomViewController.m in Sources */,
 				BF2853B5221A8EBC00C5D401 /* UIColor+JColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

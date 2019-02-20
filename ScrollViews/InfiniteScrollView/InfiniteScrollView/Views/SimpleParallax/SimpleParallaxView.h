@@ -1,5 +1,5 @@
 //
-//  SimpleParallaxTableViewController.h
+//  SimpleParallaxView.h
 //  InfiniteScrollView
 //
 //  Created by Jimmy on 2019/2/20.
@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "../InfiniteScrollView/InfiniteScrollView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SimpleParallaxTableViewController : UIViewController
-
+@interface SimpleParallaxView : InfiniteScrollView
+- (UIImageView *)getStarImageView;
 @end
 
 NS_ASSUME_NONNULL_END

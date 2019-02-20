@@ -8,6 +8,10 @@
 
 #import "TopicViewController.h"
 #import "InfiniteScrollView/InfiniteScrollViewController.h"
+#import "StationaryHeader/StationaryHeaderViewController.h"
+#import "SimpleParallax/SimpleParallaxViewController.h"
+#import "CustomizedTouchHandling/CustomizedTouchHandlingViewController.h"
+#import "RedrawScale/RedrawZoomViewController.h"
 
 @interface TopicViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -32,7 +36,12 @@ static NSString * cellId = @"cellId";
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.whiteColor;
     
-    _topics = @[@"Infinite ScrollView"];
+    _topics = @[@"Infinite ScrollView",
+                @"Simple Parallax",
+                @"Long Press to move the Moon",
+                @"Stationary Header",
+//                @"Redraw after zooming"
+                ];
     
     _tableView = [UITableView new];
     _tableView.translatesAutoresizingMaskIntoConstraints = false;
@@ -121,7 +130,26 @@ static NSString * cellId = @"cellId";
                 break;
             case 1:
             {
-                
+                SimpleParallaxViewController *vc = [SimpleParallaxViewController new];
+                [self attachController:vc];
+            }
+                break;
+            case 2:
+            {
+                CustomizedTouchHandlingViewController *vc = [CustomizedTouchHandlingViewController new];
+                [self attachController:vc];
+            }
+                break;
+            case 3:
+            {
+                StationaryHeaderViewController *vc = [StationaryHeaderViewController new];
+                [self attachController:vc];
+            }
+                break;
+            case 4:
+            {
+//                RedrawZoomViewController *vc = [RedrawZoomViewController new];
+//                [self attachController:vc];
             }
                 break;
             default:
@@ -151,15 +179,5 @@ static NSString * cellId = @"cellId";
         _label.hidden = false;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
